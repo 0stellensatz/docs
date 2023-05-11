@@ -1,33 +1,3 @@
-% recommended engine : xelatex
-% recommended class  : article
-
-% packages
-
-\usepackage{graphicx} % images.
-
-\usepackage{amsmath,amssymb,amsthm} % math symbols, theorem-like, etc.
-\usepackage{mathrsfs} % Ralph Smith's Formal Script, \mathscr{}.
-\usepackage{mathtools} % more math symbols, arrows, etc.
-\usepackage{tikz} % TikZ ist kein Zeichenprogramm.
-\usepackage{tikz-cd} % TikZ + commutative diagrams.
-\usepackage{mdframed} % frames, boxes, etc.
-\usepackage{physics} % calculus symbols and tools, etc.
-\usepackage{halloweenmath} % halloween + math!
-\usepackage{xcolor}
-
-\usepackage{enumitem} % replaces old enumerate.
-\renewcommand{\labelenumi}{(\theenumi)}
-
-\usepackage{hyperref} % hyperlinks, navigations.
-\usepackage{fancyhdr} % fancy headers and footers.
-\usepackage{lastpage}
-\usepackage{setspace} % line spacing.
-
-\usepackage[utf8]{inputenc}
-\usepackage[autolanguage]{numprint}
-
-% terminology
-
 \newcommand{\termTheorem}{Theorem}
 \newcommand{\termAxiom}{Axiom}
 \newcommand{\termProposition}{Proposition}
@@ -42,25 +12,6 @@
 \newcommand{\termNote}{Note}
 \newcommand{\termProof}{Proof}
 \newcommand{\termNumbered}{\ignorespaces}
-
-% mathematics
-
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-
-\newcommand{\SetR}{\mathbb{R}}
-\newcommand{\SetQ}{\mathbb{Q}}
-\newcommand{\SetZ}{\mathbb{Z}}
-\newcommand{\SetN}{\mathbb{N}}
-\newcommand{\SetC}{\mathbb{C}}
-\newcommand{\SetF}{\mathbb{F}}
-
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\NN}{\mathbb{N}}
-\newcommand{\CC}{\mathbb{C}}
-\newcommand{\FF}{\mathbb{F}}
 
 \newtheoremstyle{latinplain}% name
 {16pt}% space above
@@ -108,4 +59,3 @@
 \newtheorem*{solution}{\termSolution}
 
 \renewcommand\qedsymbol{$\square$}
-
