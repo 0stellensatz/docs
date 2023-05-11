@@ -1,5 +1,5 @@
-% engine recommendation : xelatex
-% class recommendation  : article
+% recommended engine : xelatex
+% recommended class  : article
 
 % packages
 
@@ -25,32 +25,23 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[autolanguage]{numprint}
-\usepackage[hangul]{kotex}
-
-\xetexkofontregime{hangul}[
-    alphs=latin,
-    parens=latin,
-    colons=prevfont,
-    hyphens=latin,
-    puncts=prevfont,
-    cjksymbols=hangul,
-]
 
 % terminology
 
-\newcommand{\termTheorem}{정리\rmfamily}
-\newcommand{\termAxiom}{공리\rmfamily}
-\newcommand{\termProposition}{명제\rmfamily}
-\newcommand{\termLemma}{보조정리\rmfamily}
-\newcommand{\termConjecture}{추측\rmfamily}
-\newcommand{\termCorollary}{따름정리\rmfamily}
-\newcommand{\termDefinition}{정의\rmfamily}
-\newcommand{\termProblem}{문제\rmfamily}
-\newcommand{\termSolution}{풀이\rmfamily}
-\newcommand{\termExample}{예\rmfamily}
-\newcommand{\termRemark}{\normalfont 주\rmfamily}
-\newcommand{\termNote}{\normalfont 노트\rmfamily}
-\newcommand{\termProof}{\normalfont 증명\rmfamily}
+\newcommand{\termTheorem}{Theorem}
+\newcommand{\termAxiom}{Axiom}
+\newcommand{\termProposition}{Proposition}
+\newcommand{\termLemma}{Lemma}
+\newcommand{\termConjecture}{Conjecture}
+\newcommand{\termCorollary}{Corollary}
+\newcommand{\termDefinition}{Definition}
+\newcommand{\termProblem}{Problem}
+\newcommand{\termSolution}{Solution}
+\newcommand{\termExample}{Example}
+\newcommand{\termRemark}{Remark}
+\newcommand{\termNote}{Note}
+\newcommand{\termProof}{Proof}
+\newcommand{\termNumbered}{\ignorespaces}
 
 % mathematics
 
@@ -71,10 +62,10 @@
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\FF}{\mathbb{F}}
 
-\newtheoremstyle{cjkplain}% name
-{}% space above
-{}% space below
-{\upshape}% body font
+\newtheoremstyle{latinplain}% name
+{16pt}% space above
+{16pt}% space below
+{}% body font
 {}% indent amount
 {\bfseries}% theorem head font
 {.}% punctuation after theorem head
@@ -88,19 +79,27 @@
 }
 \makeatother
 
-\theoremstyle{cjkplain}
+% e.g. re-declaring an existing theorem-like environment:
+%
+% \cleartheorem{problem}
+% \theoremstyle{cjkplain}
+% \newtheorem{problem}{\termProblem}[subsection]
+
+\theoremstyle{latinplain}
 
 \newtheorem{theorem}{\termTheorem}[section]
 \newtheorem{conjecture}[theorem]{\termConjecture}
 \newtheorem{lemma}[theorem]{\termLemma}
 \newtheorem{proposition}[theorem]{\termProposition}
 \newtheorem{corollary}[theorem]{\termCorollary}
-\newtheorem{problem}[theorem]{\termProblem}
+\newtheorem{problem}{\termProblem}
 
 \theoremstyle{definition}
 
 \newtheorem{definition}[theorem]{\termDefinition}
 \newtheorem{example}[theorem]{\termExample}
+
+\newtheorem{numbered}[theorem]{\termNumbered}
 
 \theoremstyle{remark}
 
@@ -109,3 +108,4 @@
 \newtheorem*{solution}{\termSolution}
 
 \renewcommand\qedsymbol{$\square$}
+

@@ -1,9 +1,9 @@
-% engine recommendation : platex 
-% class recommendation  : jsarticle
+% recommended engine : xelatex
+% recommended class  : article
 
 % packages
 
-\usepackage[dvipdfmx]{graphicx} % images.
+\usepackage{graphicx} % images.
 
 \usepackage{amsmath,amssymb,amsthm} % math symbols, theorem-like, etc.
 \usepackage{mathrsfs} % Ralph Smith's Formal Script, \mathscr{}.
@@ -25,25 +25,33 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[autolanguage]{numprint}
-\usepackage{kotex}
+\usepackage[hangul]{kotex}
 
-\usepackage{pxrubrica} % Japanese ruby.
+\xetexkofontregime{hangul}[
+    alphs=latin,
+    parens=latin,
+    colons=prevfont,
+    hyphens=latin,
+    puncts=prevfont,
+    cjksymbols=hangul,
+]
 
 % terminology
 
-\newcommand{\termTheorem}{定理\rmfamily}
-\newcommand{\termAxiom}{公理\rmfamily}
-\newcommand{\termProposition}{命題\rmfamily}
-\newcommand{\termLemma}{補題\rmfamily}
-\newcommand{\termConjecture}{推測\rmfamily}
-\newcommand{\termCorollary}{系\rmfamily}
-\newcommand{\termDefinition}{定義\rmfamily}
-\newcommand{\termProblem}{問題\rmfamily}
-\newcommand{\termSolution}{解答\rmfamily}
-\newcommand{\termExample}{例\rmfamily}
-\newcommand{\termRemark}{\normalfont 注\rmfamily}
-\newcommand{\termNote}{\normalfont ノート\rmfamily}
-\newcommand{\termProof}{\normalfont 証明\rmfamily}
+\newcommand{\termTheorem}{정리\rmfamily}
+\newcommand{\termAxiom}{공리\rmfamily}
+\newcommand{\termProposition}{명제\rmfamily}
+\newcommand{\termLemma}{보조정리\rmfamily}
+\newcommand{\termConjecture}{추측\rmfamily}
+\newcommand{\termCorollary}{따름정리\rmfamily}
+\newcommand{\termDefinition}{정의\rmfamily}
+\newcommand{\termProblem}{문제\rmfamily}
+\newcommand{\termSolution}{풀이\rmfamily}
+\newcommand{\termExample}{예\rmfamily}
+\newcommand{\termRemark}{\normalfont 주\rmfamily}
+\newcommand{\termNote}{\normalfont 노트\rmfamily}
+\newcommand{\termProof}{\normalfont 증명\rmfamily}
+\newcommand{\termNumbered}{\ignorespaces}
 
 % mathematics
 
@@ -95,6 +103,8 @@
 \newtheorem{definition}[theorem]{\termDefinition}
 \newtheorem{example}[theorem]{\termExample}
 
+\newtheorem{numbered}[theorem]{\termNumbered}
+
 \theoremstyle{remark}
 
 \newtheorem*{note}{\termNote}
@@ -102,4 +112,3 @@
 \newtheorem*{solution}{\termSolution}
 
 \renewcommand\qedsymbol{$\square$}
-

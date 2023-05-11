@@ -1,9 +1,9 @@
-% engine recommendation : xelatex
-% class recommendation  : article
+% recommended engine : platex 
+% recommended class  : jsarticle
 
 % packages
 
-\usepackage{graphicx} % images.
+\usepackage[dvipdfmx]{graphicx} % images.
 
 \usepackage{amsmath,amssymb,amsthm} % math symbols, theorem-like, etc.
 \usepackage{mathrsfs} % Ralph Smith's Formal Script, \mathscr{}.
@@ -25,22 +25,26 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[autolanguage]{numprint}
+\usepackage{kotex}
+
+\usepackage{pxrubrica} % Japanese ruby.
 
 % terminology
 
-\newcommand{\termTheorem}{Theorem}
-\newcommand{\termAxiom}{Axiom}
-\newcommand{\termProposition}{Proposition}
-\newcommand{\termLemma}{Lemma}
-\newcommand{\termConjecture}{Conjecture}
-\newcommand{\termCorollary}{Corollary}
-\newcommand{\termDefinition}{Definition}
-\newcommand{\termProblem}{Problem}
-\newcommand{\termSolution}{Solution}
-\newcommand{\termExample}{Example}
-\newcommand{\termRemark}{Remark}
-\newcommand{\termNote}{Note}
-\newcommand{\termProof}{Proof}
+\newcommand{\termTheorem}{定理\rmfamily}
+\newcommand{\termAxiom}{公理\rmfamily}
+\newcommand{\termProposition}{命題\rmfamily}
+\newcommand{\termLemma}{補題\rmfamily}
+\newcommand{\termConjecture}{推測\rmfamily}
+\newcommand{\termCorollary}{系\rmfamily}
+\newcommand{\termDefinition}{定義\rmfamily}
+\newcommand{\termProblem}{問題\rmfamily}
+\newcommand{\termSolution}{解答\rmfamily}
+\newcommand{\termExample}{例\rmfamily}
+\newcommand{\termRemark}{\normalfont 注\rmfamily}
+\newcommand{\termNote}{\normalfont ノート\rmfamily}
+\newcommand{\termProof}{\normalfont 証明\rmfamily}
+\newcommand{\termNumbered}{\ignorespaces}
 
 % mathematics
 
@@ -61,10 +65,10 @@
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\FF}{\mathbb{F}}
 
-\newtheoremstyle{latinplain}% name
-{16pt}% space above
-{16pt}% space below
-{}% body font
+\newtheoremstyle{cjkplain}% name
+{}% space above
+{}% space below
+{\upshape}% body font
 {}% indent amount
 {\bfseries}% theorem head font
 {.}% punctuation after theorem head
@@ -78,19 +82,21 @@
 }
 \makeatother
 
-\theoremstyle{latinplain}
+\theoremstyle{cjkplain}
 
 \newtheorem{theorem}{\termTheorem}[section]
 \newtheorem{conjecture}[theorem]{\termConjecture}
 \newtheorem{lemma}[theorem]{\termLemma}
 \newtheorem{proposition}[theorem]{\termProposition}
 \newtheorem{corollary}[theorem]{\termCorollary}
-\newtheorem{problem}{\termProblem}
+\newtheorem{problem}[theorem]{\termProblem}
 
 \theoremstyle{definition}
 
 \newtheorem{definition}[theorem]{\termDefinition}
 \newtheorem{example}[theorem]{\termExample}
+
+\newtheorem{numbered}[theorem]{\termNumbered}
 
 \theoremstyle{remark}
 
