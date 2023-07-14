@@ -1,0 +1,22 @@
+\usecolortheme{orchid}
+\usefonttheme{professionalfonts}
+\useinnertheme{circles}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{itemize item}{\small\raise0.5pt\hbox{$\bullet$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{$\bigstar$}}
+
+\setbeamertemplate{headline}{
+    \begin{center}
+        \structure{
+            \vskip3ex
+            \rule{0.98\linewidth}{2mm}
+            \vskip3ex
+            \usebeamercolor{title in headline}{\textbf{\large{\inserttitle}}\\[2.5ex]}
+            \usebeamercolor{author in headline}{\large{\insertauthor}}
+            \vskip3ex
+            \rule{0.98\linewidth}{2mm}
+        }
+    \end{center}
+}

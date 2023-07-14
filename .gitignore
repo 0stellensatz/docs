@@ -3,5 +3,7 @@
 *.out
 *.toc
 *.dvi
+*.snm
+*.nav
 .SRCINFO
 .DS_Store
