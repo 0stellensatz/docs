@@ -11,7 +11,6 @@
 \newcommand{\termRemark}{\normalfont 注\rmfamily}
 \newcommand{\termNote}{\normalfont ノート\rmfamily}
 \newcommand{\termProof}{\normalfont 証明\rmfamily}
-\newcommand{\termNumbered}{\ignorespaces}
 
 \newtheoremstyle{cjkplain}% name
 {}% space above
@@ -33,9 +32,10 @@
 \theoremstyle{cjkplain}
 
 \newtheorem{theorem}{\termTheorem}[section]
-\newtheorem{conjecture}[theorem]{\termConjecture}
-\newtheorem{lemma}[theorem]{\termLemma}
+\newtheorem{axiom}[theorem]{\termAxiom}
 \newtheorem{proposition}[theorem]{\termProposition}
+\newtheorem{lemma}[theorem]{\termLemma}
+\newtheorem{conjecture}[theorem]{\termConjecture}
 \newtheorem{corollary}[theorem]{\termCorollary}
 \newtheorem{problem}[theorem]{\termProblem}
 
@@ -44,7 +44,7 @@
 \newtheorem{definition}[theorem]{\termDefinition}
 \newtheorem{example}[theorem]{\termExample}
 
-\newtheorem{numbered}[theorem]{\termNumbered}
+\newtheorem{numbered}[theorem]{\ignorespaces}
 
 \theoremstyle{remark}
 
