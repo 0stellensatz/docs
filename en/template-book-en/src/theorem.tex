@@ -1,0 +1,47 @@
+\newtheoremstyle{latinplain}% name
+{16pt}% space above
+{16pt}% space below
+{}% body font
+{}% indent amount
+{\bfseries}% theorem head font
+{.}% punctuation after theorem head
+{.5em}% space after theorem head
+{}% theorem head spec (can be left empty, meaning `normal')
+
+\makeatletter
+\def\cleartheorem#1{%
+    \expandafter\let\csname#1\endcsname\relax
+    \expandafter\let\csname c@#1\endcsname\relax
+}
+\makeatother
+
+% e.g. re-declaring an existing theorem-like environment:
+%
+% \cleartheorem{problem}
+% \theoremstyle{cjkplain}
+% \newtheorem{problem}{\termProblem}[subsection]
+
+\theoremstyle{latinplain}
+
+\newtheorem{theorem}{\termTheorem}[section]
+\newtheorem{proposition}[theorem]{\termProposition}
+\newtheorem{lemma}[theorem]{\termLemma}
+\newtheorem{conjecture}[theorem]{\termConjecture}
+\newtheorem{corollary}[theorem]{\termCorollary}
+\newtheorem{problem}[theorem]{\termProblem}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}[theorem]{\termDefinition}
+\newtheorem{example}[theorem]{\termExample}
+
+\newtheorem{numbered}[theorem]{\ignorespaces}
+
+\theoremstyle{remark}
+
+\newtheorem*{note}{\termNote}
+\newtheorem*{remark}{\termRemark}
+\newtheorem*{solution}{\termSolution}
+
+\renewcommand\qedsymbol{$\square$}
+%\renewcommand\qedsymbol{$\blacksquare$}
