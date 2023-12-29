@@ -1,0 +1,77 @@
+% recommended engine : uplatex
+\documentclass[10pt,b5paper,twoside,uplatex]{jsbook}
+
+\input{../src/packages.tex}
+\input{../src/commands.tex}
+\input{../src/terms.tex}
+\input{../src/theorem.tex}
+\input{../src/cleveref.tex}
+
+%\usepackage{fapapersize}
+%\usefapapersize{*,*,25mm,*,25mm,*}
+\usepackage[
+    top=20truemm,
+    bottom=20truemm,
+    left=20truemm,
+    right=20truemm
+]{geometry}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{\markright{{\thesection\ #1}}{}}
+\renewcommand{\chaptermark}[1]{\markboth{{#1}}{}}
+
+\title{\termUntitledDocument}
+\author{\termJohnDoe}
+
+\usepackage[japanese]{pxbabel}
+
+%\usepackage[
+%    backend=biber,
+%    style=numeric
+%]{biblatex}
+
+%\addbibresource{../bib/main.bib}
+
+\begin{document}
+%\setstretch{1.5}
+\raggedbottom
+
+
+\frontmatter
+
+\fancyhf{}
+\fancyhead[LE]{\thepage}
+\fancyhead[RO]{\thepage}
+
+\maketitle
+\tableofcontents
+
+\chapter*{\termIntroduction}
+\addcontentsline{toc}{chapter}{\termIntroduction}
+\input{../src/introduction/section-0/01.00.tex}
+
+
+\mainmatter
+
+\fancyhf{}
+\fancyhead[LE]{\thepage}
+\fancyhead[RO]{\thepage}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
+
+\chapter{\termUntitledChapter}
+\label{chapter-1}
+\input{../src/chapter-1/section-0/01.00.tex}
+\section{\termUntitledSection}
+\label{chapter-1/section-1}
+\input{../src/chapter-1/section-1/01.00.tex}
+
+
+\backmatter
+
+%\printbibliography
+%\printbibliography[heading=none]
+%\printbibliography[title=\termReferences]
+
+\end{document}
