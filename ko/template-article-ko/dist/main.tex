@@ -23,10 +23,11 @@
 \renewcommand{\headrulewidth}{0pt}
 % \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 % \fancyhead[C]{\leftmark}
-\fancyfoot[C]{---~\thepage~---}
+\fancyfoot[C]{\thepage}
 
-\title{\termUntitledDocument}
-\author{\termJohnDoe}
+\title{\termUntitledDocument \thanks{\termMSC\termColon\exampleMSC}}
+\author{\termJohnDoe \thanks{\exampleAddress}\:\:\thanks{\termEmail\termColon\texttt{\exampleEmail}}}
+%\date{}
 
 %\usepackage[
 %    backend=biber,
@@ -39,8 +40,13 @@
 %\setstretch{1.5}
 
 \maketitle
+\begin{abstract}
+    \input{../src/section-0/abstract.tex}
+\end{abstract}
 \tableofcontents
 
+\section{\termIntroduction}
+\label{section:1}
 \input{../src/section-1/01.00.tex}
 
 %\printbibliography
