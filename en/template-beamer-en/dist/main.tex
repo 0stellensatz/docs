@@ -1,16 +1,18 @@
-% recommended engine : xelatex
+% recommended engine : pdflatex -> biber -> pdflatex -> pdflatex
 % $ latexpand main.tex > arxiv.tex
 % $ cp main.bbl arxiv.bbl
 \documentclass[10pt]{beamer}
 \mode<presentation>
 
 \usetheme{Frankfurt}
+\usefonttheme{structurebold}
 \usecolortheme{seahorse}
 \usecolortheme{rose}
 
 \input{../src/packages.tex}
 \input{../src/commands.tex}
 \input{../src/terms.tex}
+\input{../src/theorem.tex}
 
 \title{\termUntitledDocument}
 \author[\termJohnDoe]{\termJohnDoe \\ \texttt{\exampleEmail}}
@@ -23,7 +25,7 @@
 
 \usepackage[
     backend=biber,
-    style=numeric
+    style=alphabetic
 ]{biblatex}
 %\usepackage{xurl} % url breaks for all alphanumerical characters and = / . : - ~ ' "
 %\hypersetup{breaklinks=true}
