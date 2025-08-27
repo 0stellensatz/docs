@@ -210,10 +210,10 @@
 \newcommand{\BourbakiTopGen}{Bourbaki, \emph{Top. gén.}}
 \newcommand{\BourbakiEspVectTop}{Bourbaki, \emph{Esp. vect. top.}}
 
-\newcommand{\sorry}[1][]{%
-  \ifx\relax#1\relax%
-    \red{\texttt{[sorry]}}%
-  \else%
-    \red{\texttt{[sorry: #1]}}%
-  \fi%
+\newcommand{\sorry}[1][]{
+  \ifx\relax#1\relax
+    \red{[\emph{Sorry}.]}
+  \else
+    \red{[\emph{Sorry}: #1]}
+  \fi
 }
