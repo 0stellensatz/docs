@@ -1,7 +1,7 @@
 % recommended engine : xelatex
 % $ latexpand main.tex > arxiv.tex
 % $ cp main.bbl arxiv.bbl
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,b5paper]{article}
 
 \input{../src/packages.tex}
 \input{../src/commands.tex}
@@ -12,10 +12,10 @@
 %\usepackage{fapapersize}
 %\usefapapersize{*,*,25mm,*,25mm,*}
 \usepackage[
-    top=25truemm,
-    bottom=25truemm,
-    left=25truemm,
-    right=25truemm
+    top=22truemm,
+    bottom=30truemm,
+    left=22truemm,
+    right=22truemm
 ]{geometry}
 
 \pagestyle{fancy}
@@ -24,12 +24,12 @@
 % \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 % \fancyhead[C]{\leftmark}
 \makeatletter
-\fancyhead[L]{\@title}
+%\fancyhead[L]{\@title}
 \fancyfoot[R]{\thepage}
 \fancyfoot[L]{\today}
 \makeatother
 
-\title{\termUntitledDocument}
+\title{Notes on \\ \emph{``\termUntitledDocument''} \\ by \termJohnDoe}
 \author{\termJohnDoe}
 %\date{}
 
