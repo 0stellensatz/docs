@@ -1,83 +1,140 @@
-\newcommand{\presupscript}[1]{{}^{#1}\!}
-\newcommand{\presubscript}[1]{{}_{#1}\!}
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\powerseries}{[\![}{]\!]}
+% superscripts and subscripts on the left side
 
-\DeclareMathOperator{\GL}{\mathbf{GL}}
-\DeclareMathOperator{\SL}{\mathbf{SL}}
-\DeclareMathOperator{\PGL}{\mathbf{PGL}}
-\DeclareMathOperator{\PSL}{\mathbf{PSL}}
-\DeclareMathOperator{\Orth}{\mathbf{O}}
-\DeclareMathOperator{\SOrth}{\mathbf{SO}}
-\DeclareMathOperator{\Uni}{\mathbf{U}}
-\DeclareMathOperator{\SUni}{\mathbf{SU}}
-\DeclareMathOperator{\Sp}{\mathbf{Sp}}
+\newcommand{\presupscript}[1]{{}^{#1}\!} % superscript on the left side
+\newcommand{\presubscript}[1]{{}_{#1}\!} % subscript on the left side
 
-\DeclareMathOperator{\Spec}{Spec}
+% paired delimiters
 
-\DeclareMathOperator{\Gal}{Gal}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} % ceiling function
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} % floor function
+\DeclarePairedDelimiter{\powerseries}{[\![}{]\!]} % power series brackets
 
-\DeclareMathOperator{\Norm}{N}
-\DeclareMathOperator{\N}{N}
-%\DeclareMathOperator{\Trace}{Tr}
-%\DeclareMathOperator{\Tr}{Tr}
+% linear groups
 
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\GL}{\mathbf{GL}} % general linear group
+\DeclareMathOperator{\SL}{\mathbf{SL}} % special linear group
+\DeclareMathOperator{\PGL}{\mathbf{PGL}} % projective general linear group
+\DeclareMathOperator{\PSL}{\mathbf{PSL}} % projective special linear group
+\DeclareMathOperator{\Orth}{\mathbf{O}} % orthogonal group
+\DeclareMathOperator{\SOrth}{\mathbf{SO}} % special orthogonal group
+\DeclareMathOperator{\Uni}{\mathbf{U}} % unitary group
+\DeclareMathOperator{\SUni}{\mathbf{SU}} % special unitary group
+\DeclareMathOperator{\Sp}{\mathbf{Sp}} % symplectic group
 
-\DeclareMathOperator{\CatCat}{\mathbf{Cat}}
-\DeclareMathOperator{\CatCAT}{\mathbf{CAT}}
-\DeclareMathOperator{\CatSets}{\mathbf{Sets}}
-\DeclareMathOperator{\CatTop}{\mathbf{Top}}
-\DeclareMathOperator{\CatTopologicalSpaces}{\mathbf{Top}}
-\DeclareMathOperator{\CatGroups}{\mathbf{Groups}}
-\DeclareMathOperator{\CatAb}{\mathbf{Ab}}
-\DeclareMathOperator{\CatAbelian}{\mathbf{Ab}}
-\DeclareMathOperator{\CatRings}{\mathbf{Rings}}
-\DeclareMathOperator{\CatMod}{\mathbf{Mod}}
-\DeclareMathOperator{\CatVect}{\mathbf{Vect}}
-\DeclareMathOperator{\CatVectFin}{\mathbf{Vect}^{\mathrm{fin}}}
-\DeclareMathOperator{\CatFunctors}{\mathbf{Fun}}
-\DeclareMathOperator{\Ouv}{Ouv}
-\DeclareMathOperator{\Obj}{Obj}
-\DeclareMathOperator{\res}{res}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\pr}{pr}
-\DeclareMathOperator{\ord}{ord}
-\DeclareMathOperator{\Mor}{Mor}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Inn}{Inn}
-\DeclareMathOperator{\Out}{Out}
-\DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\Art}{Art}
-\DeclareMathOperator{\Ver}{Ver}
-\DeclareMathOperator{\Frob}{Frob}
-\DeclareMathOperator{\SheafHom}{\mathscr{H}\text{\kern -3pt {\calligra\large om}}}
+% algebraic geometry
 
-\newcommand{\dashalg}{\textrm{-}\mathrm{alg}}
-\newcommand{\dashfilt}{\textrm{-}\mathrm{filt}}
+\DeclareMathOperator{\CatOuv}{Ouv} % category of open sets
+\DeclareMathOperator{\CatPSh}{\mathbf{PSh}} % category of presheaves
+\DeclareMathOperator{\CatPresheaves}{\mathbf{PSh}} % category of presheaves
+\DeclareMathOperator{\CatSh}{\mathbf{Sh}} % category of sheaves
+\DeclareMathOperator{\CatSheaves}{\mathbf{Sh}} % category of sheaves
+\DeclareMathOperator{\CatAffSch}{\mathbf{AffSch}} % category of affine schemes
+\DeclareMathOperator{\CatAffineSchemes}{\mathbf{AffSch}} % category of affine schemes
+\DeclareMathOperator{\CatSch}{\mathbf{Sch}} % category of schemes
+\DeclareMathOperator{\CatSchemes}{\mathbf{Sch}} % category of schemes
 
-\newcommand{\prodash}{\mathrm{pro}\textrm{-}}
-\newcommand{\primetodash}{\mathrm{prime}\textrm{-}\mathrm{to}\textrm{-}}
+\DeclareMathOperator{\Spec}{Spec} % spectrum of a ring
+\DeclareMathOperator{\res}{res} % restriction
 
-\newcommand{\ab}{\mathrm{ab}}
-\newcommand{\mab}{\mathrm{mab}}
-\newcommand{\nr}{\mathrm{un}}
-\newcommand{\un}{\mathrm{un}}
-\newcommand{\cyc}{\mathrm{cycl}}
-\newcommand{\cycl}{\mathrm{cycl}}
-\newcommand{\tame}{\mathrm{tame}}
-\newcommand{\alg}{\mathrm{alg}}
-\newcommand{\sep}{\mathrm{sep}}
-\newcommand{\tor}{\mathrm{tor}}
-\newcommand{\filt}{\mathrm{filt}}
-\newcommand{\opp}{\mathrm{opp}}
-\newcommand{\MLF}{\mathrm{MLF}}
-\newcommand{\LT}{\mathrm{LT}}
-\newcommand{\HT}{\mathrm{HT}}
-\newcommand{\Primes}{\mathfrak{Primes}}
+\DeclareMathOperator{\SheafHom}{\mathscr{H}\text{\kern -3pt {\calligra\large om}}} % sheaf Hom
+
+% number theory
+
+\DeclareMathOperator{\Gal}{Gal} % Galois group
+
+\DeclareMathOperator{\Norm}{N} % norm
+\DeclareMathOperator{\N}{N} % norm
+%\DeclareMathOperator{\Trace}{Tr} % trace
+%\DeclareMathOperator {\Tr}{Tr} % trace
+
+\DeclareMathOperator{\ord}{ord} % order (valuation)
+
+\DeclareMathOperator{\Art}{Art} % Artin map
+\DeclareMathOperator{\Ver}{Ver} % Verschiebung (transfer)
+\DeclareMathOperator{\Frob}{Frob} % Frobenius
+
+\DeclareMathOperator{\CatAffAlg}{\mathbf{AffAlg}} % category of affine algebras
+\DeclareMathOperator{\CatAffineAlgebras}{\mathbf{AffAlg}} % category of affine algebras
+\DeclareMathOperator{\CatAffSp}{\mathbf{AffSp}} % category of affine spaces
+\DeclareMathOperator{\CatAffineSpaces}{\mathbf{AffSp}} % category of affine spaces
+\DeclareMathOperator{\CatRig}{\mathbf{Rig}} % category of rigid spaces
+\DeclareMathOperator{\CatRigidSpaces}{\mathbf{Rig}} % category of rigid spaces
+\DeclareMathOperator{\CatAffFSch}{\mathbf{AffFSch}} % category of affine formal schemes
+\DeclareMathOperator{\CatAffineFormalSchemes}{\mathbf{AffFSch}} % category of affine formal schemes
+\DeclareMathOperator{\CatFSch}{\mathbf{FSch}} % category of formal schemes
+\DeclareMathOperator{\CatFormalSchemes}{\mathbf{FSch}} % category of formal schemes
+
+\DeclareMathOperator{\Spm}{Spm} % maximal spectrum
+\DeclareMathOperator{\Spa}{Spa} % adic spectrum
+\DeclareMathOperator{\Spf}{Spf} % formal spectrum
+
+\renewcommand{\mod}{\,\mathrm{mod}\,} % mod (in congruences)
+
+\newcommand{\nr}{\mathrm{un}} % unramified
+\newcommand{\un}{\mathrm{un}} % unramified
+\newcommand{\cyc}{\mathrm{cycl}} % cyclotomic
+\newcommand{\cycl}{\mathrm{cycl}} % cyclotomic
+\newcommand{\tame}{\mathrm{tame}} % tamely ramified
+\newcommand{\alg}{\mathrm{alg}} % algebraic
+\newcommand{\sep}{\mathrm{sep}} % separable
+
+\newcommand{\MLF}{\mathrm{MLF}} % mixed-characteristic local field
+\newcommand{\LT}{\mathrm{LT}} % Lubin-Tate
+\newcommand{\HT}{\mathrm{HT}} % Hodge-Tate
+\newcommand{\Primes}{\mathfrak{Primes}} % set of all primes
+
+% category theory
+
+\DeclareMathOperator{\Ker}{Ker} % kernel
+\DeclareMathOperator{\Coker}{Coker} % cokernel
+
+\DeclareMathOperator{\CatCat}{\mathbf{Cat}} % category of small categories
+\DeclareMathOperator{\CatCAT}{\mathbf{CAT}} % category of (possibly large) categories
+\DeclareMathOperator{\CatSets}{\mathbf{Sets}} % category of sets
+\DeclareMathOperator{\CatTop}{\mathbf{Top}} % category of topological spaces
+\DeclareMathOperator{\CatTopologicalSpaces}{\mathbf{Top}} % category of topological spaces
+\DeclareMathOperator{\CatGroups}{\mathbf{Groups}} % category of groups
+\DeclareMathOperator{\CatAb}{\mathbf{Ab}} % category of abelian groups
+\DeclareMathOperator{\CatAbelian}{\mathbf{Ab}} % category of abelian groups
+\DeclareMathOperator{\CatRings}{\mathbf{Rings}} % category of rings
+\DeclareMathOperator{\CatAlg}{\mathbf{Alg}} % category of algebras
+\DeclareMathOperator{\CatAlgebras}{\mathbf{Alg}} % category of algebras
+\DeclareMathOperator{\CatMod}{\mathbf{Mod}} % category of modules
+\DeclareMathOperator{\CatModules}{\mathbf{Mod}} % category of modules
+\DeclareMathOperator{\CatVect}{\mathbf{Vect}} % category of vector spaces
+\DeclareMathOperator{\CatVectorSpaces}{\mathbf{Vect}} % category of vector spaces
+\DeclareMathOperator{\CatVectFin}{\mathbf{Vect}^{\mathrm{fin}}} % category of finite-dimensional vector spaces
+\DeclareMathOperator{\CatFun}{\mathbf{Fun}} % category of functors
+\DeclareMathOperator{\CatFunctors}{\mathbf{Fun}} % category of functors
+
+\DeclareMathOperator{\Obj}{Obj} % objects
+\DeclareMathOperator{\Mor}{Mor} % morphisms
+\DeclareMathOperator{\Hom}{Hom} % homomorphisms
+\DeclareMathOperator{\Aut}{Aut} % automorphisms
+\DeclareMathOperator{\Isom}{Isom} % isomorphisms
+\DeclareMathOperator{\id}{id} % identity
+\DeclareMathOperator{\pr}{pr} % projection
+
+\newcommand{\dashalg}{\textrm{-}\mathrm{alg}} % -algebras
+
+\newcommand{\opp}{\mathrm{opp}} % opposite
+
+% group theory
+
+\DeclareMathOperator{\Inn}{Inn} % inner automorphisms
+\DeclareMathOperator{\Out}{Out} % outer automorphisms
+
+\newcommand{\ab}{\mathrm{ab}} % abelian
+\newcommand{\mab}{\mathrm{mab}} % metabelian
+\newcommand{\tor}{\mathrm{tor}} % torsion
+\newcommand{\filt}{\mathrm{filt}} % filtered
+
+\newcommand{\dashfilt}{\textrm{-}\mathrm{filt}} % -filtered
+
+\newcommand{\prodash}{\mathrm{pro}\textrm{-}} % pro-
+\newcommand{\primetodash}{\mathrm{prime}\textrm{-}\mathrm{to}\textrm{-}} % prime-to-
+
+% sets and numbers
 
 % \newcommand{\SetA}{\mathbb{A}}
 % \newcommand{\SetB}{\mathbb{B}}
@@ -193,6 +250,8 @@
 \newcommand{\affine}{\mathbf{A}}
 \newcommand{\sphere}{\mathbf{S}}
 
+% colors and boxes
+
 \newcommand{\gray}[1]{\textcolor{gray}{#1}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\green}[1]{\textcolor{green!60!black}{#1}}
@@ -210,10 +269,14 @@
 \newcommand{\greenbox}[1]{\begin{mdframed}[linecolor=green!60!black]#1\end{mdframed}}
 \newcommand{\bluebox}[1]{\begin{mdframed}[linecolor=blue!80!black]#1\end{mdframed}}
 
+% Bourbaki
+
 \newcommand{\BourbakiAlg}{Bourbaki, \emph{Alg.}}
 \newcommand{\BourbakiAlgComm}{Bourbaki, \emph{Alg. comm.}}
 \newcommand{\BourbakiTopGen}{Bourbaki, \emph{Top. gén.}}
 \newcommand{\BourbakiEspVectTop}{Bourbaki, \emph{Esp. vect. top.}}
+
+% sorry
 
 \newcommand{\sorry}[1][]{
   \ifx\relax#1\relax
