@@ -1,5 +1,5 @@
 % en_template_note_mathematics/src/commands.tex
-% version 1.0.1
+% version 1.0.2
 % superscripts and subscripts on the left side
 
 \newcommand{\presupscript}[1]{{}^{#1}\!} % superscript on the left side
@@ -30,20 +30,20 @@
 
 \DeclareMathOperator{\CatOuv}{Ouv} % category of open sets
 \DeclareMathOperator{\CatPSh}{\mathbf{PSh}} % category of presheaves
-\DeclareMathOperator{\CatPresheaves}{\mathbf{PSh}} % category of presheaves
+\DeclareMathOperator{\CatPresheaves}{\CatPSh} % category of presheaves
 \DeclareMathOperator{\CatSh}{\mathbf{Sh}} % category of sheaves
-\DeclareMathOperator{\CatSheaves}{\mathbf{Sh}} % category of sheaves
+\DeclareMathOperator{\CatSheaves}{\CatSh} % category of sheaves
 \DeclareMathOperator{\CatAffSch}{\mathbf{AffSch}} % category of affine schemes
-\DeclareMathOperator{\CatAffineSchemes}{\mathbf{AffSch}} % category of affine schemes
+\DeclareMathOperator{\CatAffineSchemes}{\CatAffSch} % category of affine schemes
 \DeclareMathOperator{\CatSch}{\mathbf{Sch}} % category of schemes
-\DeclareMathOperator{\CatSchemes}{\mathbf{Sch}} % category of schemes
+\DeclareMathOperator{\CatSchemes}{\CatSch} % category of schemes
 
 \DeclareMathOperator{\Spec}{Spec} % spectrum of a ring
 \DeclareMathOperator{\res}{res} % restriction
 
 \DeclareMathOperator{\SheafHom}{\mathscr{H}\text{\kern -3pt {\calligra\large om}}} % sheaf Hom
 
-\newcommand{\trdeg}{tr.deg} % transcendence degree
+\newcommand{\trdeg}{\mathrm{tr.deg}} % transcendence degree
 
 % number theory
 
@@ -62,15 +62,15 @@
 \DeclareMathOperator{\Frob}{Frob} % Frobenius
 
 \DeclareMathOperator{\CatAffAlg}{\mathbf{AffAlg}} % category of affine algebras
-\DeclareMathOperator{\CatAffineAlgebras}{\mathbf{AffAlg}} % category of affine algebras
+\DeclareMathOperator{\CatAffineAlgebras}{\CatAffAlg} % category of affine algebras
 \DeclareMathOperator{\CatAffSp}{\mathbf{AffSp}} % category of affine spaces
-\DeclareMathOperator{\CatAffineSpaces}{\mathbf{AffSp}} % category of affine spaces
+\DeclareMathOperator{\CatAffineSpaces}{\CatAffSp} % category of affine spaces
 \DeclareMathOperator{\CatRig}{\mathbf{Rig}} % category of rigid spaces
-\DeclareMathOperator{\CatRigidSpaces}{\mathbf{Rig}} % category of rigid spaces
+\DeclareMathOperator{\CatRigidSpaces}{\CatRig} % category of rigid spaces
 \DeclareMathOperator{\CatAffFSch}{\mathbf{AffFSch}} % category of affine formal schemes
-\DeclareMathOperator{\CatAffineFormalSchemes}{\mathbf{AffFSch}} % category of affine formal schemes
+\DeclareMathOperator{\CatAffineFormalSchemes}{\CatAffFSch} % category of affine formal schemes
 \DeclareMathOperator{\CatFSch}{\mathbf{FSch}} % category of formal schemes
-\DeclareMathOperator{\CatFormalSchemes}{\mathbf{FSch}} % category of formal schemes
+\DeclareMathOperator{\CatFormalSchemes}{\CatFSch} % category of formal schemes
 
 \DeclareMathOperator{\Spm}{Spm} % maximal spectrum
 \DeclareMathOperator{\Spa}{Spa} % adic spectrum
@@ -127,20 +127,20 @@
 \DeclareMathOperator{\CatCAT}{\mathbf{CAT}} % category of (possibly large) categories
 \DeclareMathOperator{\CatSets}{\mathbf{Sets}} % category of sets
 \DeclareMathOperator{\CatTop}{\mathbf{Top}} % category of topological spaces
-\DeclareMathOperator{\CatTopologicalSpaces}{\mathbf{Top}} % category of topological spaces
+\DeclareMathOperator{\CatTopologicalSpaces}{\CatTop} % category of topological spaces
 \DeclareMathOperator{\CatGroups}{\mathbf{Groups}} % category of groups
 \DeclareMathOperator{\CatAb}{\mathbf{Ab}} % category of abelian groups
-\DeclareMathOperator{\CatAbelian}{\mathbf{Ab}} % category of abelian groups
+\DeclareMathOperator{\CatAbelian}{\CatAb} % category of abelian groups
 \DeclareMathOperator{\CatRings}{\mathbf{Rings}} % category of rings
 \DeclareMathOperator{\CatAlg}{\mathbf{Alg}} % category of algebras
-\DeclareMathOperator{\CatAlgebras}{\mathbf{Alg}} % category of algebras
+\DeclareMathOperator{\CatAlgebras}{\CatAlg} % category of algebras
 \DeclareMathOperator{\CatMod}{\mathbf{Mod}} % category of modules
-\DeclareMathOperator{\CatModules}{\mathbf{Mod}} % category of modules
+\DeclareMathOperator{\CatModules}{\CatMod} % category of modules
 \DeclareMathOperator{\CatVect}{\mathbf{Vect}} % category of vector spaces
-\DeclareMathOperator{\CatVectorSpaces}{\mathbf{Vect}} % category of vector spaces
-\DeclareMathOperator{\CatVectFin}{\mathbf{Vect}^{\mathrm{fin}}} % category of finite-dimensional vector spaces
+\DeclareMathOperator{\CatVectorSpaces}{\CatVect} % category of vector spaces
+\DeclareMathOperator{\CatVectFin}{\mathrm{fin.\!dim.\!}\CatVect} % category of finite-dimensional vector spaces
 \DeclareMathOperator{\CatFun}{\mathbf{Fun}} % category of functors
-\DeclareMathOperator{\CatFunctors}{\mathbf{Fun}} % category of functors
+\DeclareMathOperator{\CatFunctors}{\CatFun} % category of functors
 
 \DeclareMathOperator{\Obj}{Obj} % objects
 \DeclareMathOperator{\Mor}{Mor} % morphisms
@@ -165,14 +165,16 @@
 \newcommand{\nilp}{\mathrm{nilp}} % nilpotent
 \newcommand{\tor}{\mathrm{tor}} % torsion
 \newcommand{\filt}{\mathrm{filt}} % filtered
+\newcommand{\pro}{\mathrm{pro}} % pro
+\newcommand{\primeto}{\mathrm{prime}\textrm{-}\mathrm{to}} % prime-to
 \newcommand{\prof}{\mathrm{prof}} % profinite
 
-\newcommand{\dashfilt}{\textrm{-}\mathrm{filt}} % -filtered
-\newcommand{\dashsolv}{\textrm{-}\mathrm{solv}} % -solvable
-\newcommand{\dashnilp}{\textrm{-}\mathrm{nilp}} % -nilpotent
+\newcommand{\dashfilt}{\textrm{-}\filt} % -filtered
+\newcommand{\dashsolv}{\textrm{-}\solv} % -solvable
+\newcommand{\dashnilp}{\textrm{-}\nilp} % -nilpotent
 
-\newcommand{\prodash}{\mathrm{pro}\textrm{-}} % pro-
-\newcommand{\primetodash}{\mathrm{prime}\textrm{-}\mathrm{to}\textrm{-}} % prime-to-
+\newcommand{\prodash}{\pro\textrm{-}} % pro-
+\newcommand{\primetodash}{\primeto\textrm{-}} % prime-to-
 
 % sets and numbers
 
