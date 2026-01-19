@@ -1,5 +1,5 @@
 % en_template_note_mathematics/src/commands.tex
-% version 1.0.3
+% version 1.0.4
 % superscripts and subscripts on the left side
 
 \newcommand{\presupscript}[1]{{}^{#1}\!} % superscript on the left side
@@ -44,6 +44,13 @@
 \DeclareMathOperator{\SheafHom}{\mathscr{H}\text{\kern -3pt {\calligra\large om}}} % sheaf Hom
 
 \newcommand{\trdeg}{\mathrm{tr.deg}} % transcendence degree
+
+\ExplSyntaxOn
+\NewDocumentCommand{\ProjPoint}{m}{
+  ( \seq_set_from_clist:Nn \l_tmpa_seq { #1 }
+    \seq_use:Nn \l_tmpa_seq { {\,:\,} } )
+}
+\ExplSyntaxOff % point in projective space, e.g., \ProjPoint{X_0, X_1, X_2} gives (X_0 : X_1 : X_2)
 
 % number theory
 
