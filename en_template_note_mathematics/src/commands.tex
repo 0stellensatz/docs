@@ -1,18 +1,10 @@
 % en_template_note_mathematics/src/commands.tex
-% version 1.0.6
+% version 1.0.7
+
 % superscripts and subscripts on the left side
 
 \newcommand{\presupscript}[1]{{}^{#1}\!} % superscript on the left side
 \newcommand{\presubscript}[1]{{}_{#1}\!} % subscript on the left side
-
-% paired delimiters
-
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} % ceiling function
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} % floor function
-\DeclarePairedDelimiter{\powerseries}{[\![}{]\!]} % power series brackets
-\DeclarePairedDelimiter{\bpowerseries}{[\![}{]\!]} % power series brackets
-\DeclarePairedDelimiter{\ppowerseries}{(\!(}{)\!)} % power series parentheses
-\DeclarePairedDelimiter{\Bpowerseries}{\{\!\{}{\}\!\}} % power series braces
 
 % linear groups
 
@@ -27,6 +19,11 @@
 \DeclareMathOperator{\Sp}{\mathbf{Sp}} % symplectic group
 
 % algebraic geometry
+
+\DeclarePairedDelimiter{\powerseries}{[\![}{]\!]} % power series brackets
+\DeclarePairedDelimiter{\bpowerseries}{[\![}{]\!]} % power series brackets
+\DeclarePairedDelimiter{\ppowerseries}{(\!(}{)\!)} % power series parentheses
+\DeclarePairedDelimiter{\Bpowerseries}{\{\!\{}{\}\!\}} % power series braces
 
 \DeclareMathOperator{\CatOuv}{Ouv} % category of open sets
 \DeclareMathOperator{\CatPSh}{\mathbf{PSh}} % category of presheaves
@@ -58,6 +55,9 @@
 \ExplSyntaxOff % point in projective space, e.g., \ProjPoint{X_0, X_1, X_2} gives (X_0 : X_1 : X_2)
 
 % number theory
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} % ceiling function
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} % floor function
 
 \DeclareMathOperator{\Gal}{Gal} % Galois group
 \DeclareMathOperator{\Cl}{Cl} % class group
@@ -190,6 +190,8 @@
 \newcommand{\primetodash}{\primeto\textrm{-}} % prime-to-
 
 % sets and numbers
+
+\newcommand{\Set}[2]{\left\{ #1 \; \middle| \; #2 \right\}}
 
 % \newcommand{\SetA}{\mathbb{A}}
 % \newcommand{\SetB}{\mathbb{B}}
