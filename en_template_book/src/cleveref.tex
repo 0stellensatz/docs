@@ -1,6 +1,12 @@
 % en_template_book/src/cleveref.tex
-% version 1.0.0
-\crefname{section}{\S\!}{\S\S\!}
+% version 1.0.2
+
+\crefformat{section}{\S#2#1#3}
+\crefrangeformat{section}{\S\S#3#1#4--#5#2#6}
+\crefmultiformat{section}{\S\S#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
+\crefformat{numbered}{\S#2#1#3}
+\crefrangeformat{numbered}{\S\S#3#1#4--#5#2#6}
+\crefmultiformat{numbered}{\S\S#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
 
 \crefname{theorem}{\MakeLowercase{\termTheorem}}{\MakeLowercase{\termTheorems}}
 \crefname{proposition}{\MakeLowercase{\termProposition}}{\MakeLowercase{\termPropositions}}
@@ -16,7 +22,12 @@
 \crefname{figure}{\MakeLowercase{\termFigure}}{\MakeLowercase{\termFigures}}
 \crefname{table}{\MakeLowercase{\termTable}}{\MakeLowercase{\termTables}}
 
-\Crefname{section}{\S\!}{\S\S\!}
+\Crefformat{section}{\S#2#1#3}
+\Crefrangeformat{section}{\S\S#3#1#4--#5#2#6}
+\Crefmultiformat{section}{\S\S#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
+\Crefformat{numbered}{\S#2#1#3}
+\Crefrangeformat{numbered}{\S\S#3#1#4--#5#2#6}
+\Crefmultiformat{numbered}{\S\S#2#1#3}{ and~#2#1#3}{, #2#1#3}{ and~#2#1#3}
 
 \Crefname{theorem}{\termTheorem}{\termTheorems}
 \Crefname{proposition}{\termProposition}{\termPropositions}

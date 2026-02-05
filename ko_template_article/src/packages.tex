@@ -19,8 +19,9 @@
 \usepackage{mdframed} % frames, boxes, etc.
 \usepackage{tcolorbox} % colored boxes.
 
-\usepackage{enumitem} % replaces old enumerate.
-\renewcommand{\labelenumi}{(\theenumi)}
+%\usepackage{enumitem} % replaces old enumerate.
+\usepackage{dhucs-enumitem} % replaces old enumerate.
+\setenumerate[1]{label={\onum*}}
 \usepackage{xcolor} % driver-independent color extensions 
 \usepackage{hyperref} % hyperlinks, navigations.
 \usepackage{cleveref} % clever references.
@@ -35,7 +36,7 @@
 
 \xetexkofontregime{hangul}[
     alphs=latin,
-    parens=latin,
+    parens=hangul,
     colons=prevfont,
     hyphens=latin,
     puncts=prevfont,
