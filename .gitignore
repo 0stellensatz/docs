@@ -1,7 +1,8 @@
 ## OS / internal use files
 .DS_Store
 Thumbs.db
-# tmp/
+__tmp/
+__latexpand/
 
 ## Core latex / pdflatex auxiliary files:
 *.aux
