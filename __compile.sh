@@ -8,5 +8,11 @@ fi
 # Remove .tex extension if present
 template="${1%.tex}"
 
+# Check if the .tex file exists
+if [ ! -f "${template}.tex" ]; then
+    echo "Error: File '${template}.tex' not found"
+    exit 1
+fi
+
 latexpand --keep-comments "${template}.tex" > "__latexpand/${template}.tex" && \
 echo -e "\n% COMPILED:\n%     $(date +%Y-%m-%dT%H:%M:%S%z)" >> "__latexpand/${template}.tex"
