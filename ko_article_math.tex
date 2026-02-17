@@ -1,7 +1,7 @@
 % !TEX program = xelatex
 
 % NAME:
-%     en_article_mathematics
+%     ko_article_mathematics
 % VERSION:
 %     2026-02-17
 
@@ -19,7 +19,9 @@
 
 \input{__common/packages.tex}
 
-\input{__common/packages_enumitem.tex}
+\input{__common/packages_korean.tex}
+
+\input{__common/packages_enumitem_ko.tex}
 
 \input{__common/packages_graphic.tex}
 
@@ -27,13 +29,9 @@
 
 \input{__common/packages_ref.tex}
 
-\input{__common/packages_fonts.tex}
-
 %%%%%%%%%%%%%%
 %% COMMANDS %%
 %%%%%%%%%%%%%%
-
-\input{__common/commands_ordinal.tex}
 
 \input{__common/commands_math.tex}
 
@@ -47,19 +45,19 @@
 %% TERMINOLOGY %%
 %%%%%%%%%%%%%%%%%
 
-\input{__common/term_en.tex}
+\input{__common/term_ko.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% THEOREM-LIKE ENVIRONMENTS %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{__common/theorem.tex}
+\input{__common/theorem_cjk.tex}
 
 %%%%%%%%%%%%%%
 %% CLEVEREF %%
 %%%%%%%%%%%%%%
 
-\input{__common/cref.tex}
+\input{__common/cref_cjk.tex}
 
 %%%%%%%%%%%%
 %% LAYOUT %%
@@ -94,12 +92,6 @@
 %\date{}
 
 %%%%%%%%%%%
-%% BABEL %%
-%%%%%%%%%%%
-
-\usepackage[english]{babel}
-
-%%%%%%%%%%%
 %% BIBER %%
 %%%%%%%%%%%
 
@@ -108,8 +100,6 @@
 %%%%%%%%%%
 %% MISC %%
 %%%%%%%%%%
-
-%% -- hyphenation -- %%
 
 %\hyphenation{...-...-...}
 

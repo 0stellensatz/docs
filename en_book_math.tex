@@ -1,7 +1,7 @@
 % !TEX program = xelatex
 
 % NAME:
-%     en_article_mathematics
+%     en_book_mathematics
 % VERSION:
 %     2026-02-17
 
@@ -11,7 +11,7 @@
 %% DOCUMENTCLASS %%
 %%%%%%%%%%%%%%%%%%%
 
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,b5paper,twoside]{book}
 
 %%%%%%%%%%%%%%
 %% PACKAGES %%
@@ -68,10 +68,10 @@
 %\usepackage{fapapersize}
 %\usefapapersize{*,*,25mm,*,25mm,*}
 \usepackage[
-    top=25truemm,
-    bottom=25truemm,
-    left=25truemm,
-    right=25truemm
+    top=20truemm,
+    bottom=20truemm,
+    left=20truemm,
+    right=20truemm
 ]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,19 +79,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagestyle{fancy}
-\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-%\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
-%\fancyhead[C]{\leftmark}
-\fancyfoot[C]{\thepage}
+\renewcommand{\sectionmark}[1]{\markright{\textit{\thesection\ #1}}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %% TITLE, AUTHOR, DATE %%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{\termUntitledDocument \thanks{\termMSC\termColon\exampleMSC}}
-\author{\exampleNameSC \thanks{\exampleAddress}\:\:\thanks{\termEmail\termColon\texttt{\exampleEmail}}}
-%\date{}
+\title{\termUntitledDocument}
+\author{\exampleNameSC}
 
 %%%%%%%%%%%
 %% BABEL %%
@@ -115,25 +112,57 @@
 
 \begin{document}
 %\setstretch{1.5}
+\raggedbottom
+
+\frontmatter
+
+\fancyhf{}
+\fancyhead[LE]{\thepage}
+\fancyhead[RO]{\thepage}
 
 \maketitle
-
-\input{__common/placeholder_abstract.tex}
-
 \tableofcontents
+
+%%///////////////////////////////////////////%%
+%%////// BEGINNING OF THE INTRODUCTION //////%%
+%%///////////////////////////////////////////%%
+
+\chapter*{\termIntroduction}
+\addcontentsline{toc}{chapter}{\termIntroduction}
+
+\input{__common/placeholder_content.tex}
+
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
+%%\\\\\\ END OF THE INTRODUCTION \\\\\\%%
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
+
+\mainmatter
+
+\fancyhf{}
+\fancyhead[LE]{\thepage}
+\fancyhead[RO]{\thepage}
+\fancyhead[CE]{\leftmark}
+\fancyhead[CO]{\rightmark}
 
 %%//////////////////////////////////////%%
 %%////// BEGINNING OF THE CONTENT //////%%
 %%//////////////////////////////////////%%
 
-\section{\termIntroduction}
-\label{section:01.00}
+\chapter{\termUntitledChapter}
+\label{chapter:01.00}
+
+\input{__common/placeholder_content.tex}
+
+\section{\termUntitledSection}
+\label{section:01.00.01.00}
 
 \input{__common/placeholder_content.tex}
 
 %%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
 %%\\\\\\ END OF THE CONTENT \\\\\\%%
 %%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
+
+\backmatter
 
 \input{__common/placeholder_references.tex}
 

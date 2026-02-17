@@ -5,16 +5,7 @@
 % VERSION:
 %     2026-02-16
 
-% BUILD LATEX PROJECT (WITHOUT .BIB):
-%     $ xelatex main.tex
-% BUILD LATEX PROJECT (WITH .BIB):
-%     $ xelatex main.tex
-%     $ biber main
-%     $ xelatex main.tex
-%     $ xelatex main.tex
-% PREPARE FOR ARXIV:
-%     $ latexpand main.tex > arxiv.tex
-%     $ cp main.bbl arxiv.bbl
+\input{__common/guide_xelatex.tex}
 
 %%%%%%%%%%%%%%%%%%%
 %% DOCUMENTCLASS %%
@@ -26,39 +17,17 @@
 %% PACKAGES %%
 %%%%%%%%%%%%%%
 
-\usepackage{graphicx} % images.
-\usepackage{tikz} % TikZ ist kein Zeichenprogramm.
-\usepackage{tikz-cd} % TikZ + commutative diagrams.
-\usepackage{quiver} % commutative diagrams.
+\input{__common/packages.tex}
 
-\usepackage{amsmath,amssymb,amsthm,thmtools} % math symbols, theorem-like, etc.
-\usepackage{calligra}
-\usepackage{bm} % access bold symbols in maths mode.
-\usepackage{mathrsfs} % Ralph Smith's Formal Script, \mathscr{}.
-%\usepackage[euler-digits,euler-hat-accent]{eulervm} % Euler fonts.
-%\usepackage{newpxtext,newpxmath} % Palatino fonts.
-\usepackage{newtxtext,newtxmath} % Times fonts.
-\usepackage{mathtools} % more math symbols, arrows, etc.
-\usepackage{halloweenmath} % 👻
-\usepackage{physics} % macros supporting the mathematics of physics.
-\usepackage{lipsum} % easy access to the lorem ipsum and other dummy texts.
-\usepackage{etoolbox} % e-TeX tools for LaTeX.
-\usepackage{xspace} % smart spacing after macros.
+\input{__common/packages_enumitem.tex}
 
-\usepackage{mdframed} % frames, boxes, etc.
-\usepackage{tcolorbox} % colored boxes.
+\input{__common/packages_graphic.tex}
 
-\usepackage{enumitem} % replaces old enumerate.
-\renewcommand{\labelenumi}{(\theenumi)}
-\usepackage{xcolor} % driver-independent color extensions 
-\usepackage{hyperref} % hyperlinks, navigations.
-\usepackage{cleveref} % clever references.
-\usepackage{fancyhdr} % fancy headers and footers.
-\usepackage{lastpage} % reference last page for page N of M type footers.
-\usepackage{setspace} % line spacing.
-\usepackage{xparse} % extended programming features for LaTeX3.
+\input{__common/packages_math.tex}
 
-\usepackage[autolanguage]{numprint}
+\input{__common/packages_ref.tex}
+
+\input{__common/packages_fonts.tex}
 
 %%%%%%%%%%%%%%
 %% COMMANDS %%
@@ -69,6 +38,10 @@
 \input{__common/commands_math.tex}
 
 \input{__common/commands_color.tex}
+
+\input{__common/commands_boxes.tex}
+
+\input{__common/commands_sorry.tex}
 
 %%%%%%%%%%%%%%%%%
 %% TERMINOLOGY %%
@@ -122,8 +95,8 @@
 
 \title{{\Large Notes on}
 \\ \emph{``\termUntitledDocument''}
-\\ {\Large by \termJohnDoe}}
-\author{\termJohnDoe}
+\\ {\Large by \exampleNameSC}}
+\author{\exampleNameSC}
 %\date{}
 
 %%%%%%%%%%%
@@ -142,6 +115,8 @@
 %% MISC %%
 %%%%%%%%%%
 
+%% -- hyphenation -- %%
+
 %\hyphenation{...-...-...}
 
 \begin{document}
@@ -150,20 +125,19 @@
 \maketitle
 \tableofcontents
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%//////////////////////////////////////%%
 %%////// BEGINNING OF THE CONTENT //////%%
 %%//////////////////////////////////////%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{__common/content_placeholder.tex}
+\section{\termIntroduction}
+\label{section:01.00}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{__common/placeholder_content.tex}
+
 %%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
 %%\\\\\\ END OF THE CONTENT \\\\\\%%
 %%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{__common/content_references.tex}
+\input{__common/placeholder_references.tex}
 
 \end{document}

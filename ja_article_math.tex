@@ -1,17 +1,17 @@
-% !TEX program = xelatex
+% !TEX program = uplatex
 
 % NAME:
-%     en_article_mathematics
+%     ja_article_mathematics
 % VERSION:
 %     2026-02-17
 
-\input{__common/guide_xelatex.tex}
+\input{__common/guide_uplatex.tex}
 
 %%%%%%%%%%%%%%%%%%%
 %% DOCUMENTCLASS %%
 %%%%%%%%%%%%%%%%%%%
 
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper,uplatex]{jsarticle}
 
 %%%%%%%%%%%%%%
 %% PACKAGES %%
@@ -29,11 +29,11 @@
 
 \input{__common/packages_fonts.tex}
 
+\input{__common/packages_japanese.tex}
+
 %%%%%%%%%%%%%%
 %% COMMANDS %%
 %%%%%%%%%%%%%%
-
-\input{__common/commands_ordinal.tex}
 
 \input{__common/commands_math.tex}
 
@@ -47,19 +47,19 @@
 %% TERMINOLOGY %%
 %%%%%%%%%%%%%%%%%
 
-\input{__common/term_en.tex}
+\input{__common/term_ja.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% THEOREM-LIKE ENVIRONMENTS %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{__common/theorem.tex}
+\input{__common/theorem_cjk.tex}
 
 %%%%%%%%%%%%%%
 %% CLEVEREF %%
 %%%%%%%%%%%%%%
 
-\input{__common/cref.tex}
+\input{__common/cref_cjk.tex}
 
 %%%%%%%%%%%%
 %% LAYOUT %%
@@ -93,11 +93,11 @@
 \author{\exampleNameSC \thanks{\exampleAddress}\:\:\thanks{\termEmail\termColon\texttt{\exampleEmail}}}
 %\date{}
 
-%%%%%%%%%%%
-%% BABEL %%
-%%%%%%%%%%%
+%%%%%%%%%%%%%
+%% PXBABEL %%
+%%%%%%%%%%%%%
 
-\usepackage[english]{babel}
+\usepackage[japanese]{pxbabel}
 
 %%%%%%%%%%%
 %% BIBER %%

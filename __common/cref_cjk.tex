@@ -1,4 +1,42 @@
+%%//////////////////////////////////////%%
+%%////// BEGINNING OF INPUT BLOCK //////%%
+%%//////////////////////////////////////%%
+
 %% >>>> INPUT FROM:
 %% >>>>     __common/cref_cjk.tex
 %% >>>> VERSION:
-%% >>>>     2026-02-16
+%% >>>>     2026-02-17
+
+%% -- \cref -- %%
+
+\crefformat{section}{\S#2#1#3}
+\crefrangeformat{section}{\S\S#3#1#4--#5#2#6}
+\crefmultiformat{section}{\S#2#1#3}{\termCrefPairConjunction~\S#2#1#3}{, #2#1#3}{\termCrefPairConjunction~\S#2#1#3}
+\crefformat{numbered}{\S#2#1#3}
+\crefrangeformat{numbered}{\S\S#3#1#4--#5#2#6}
+\crefmultiformat{numbered}{\S#2#1#3}{\termCrefPairConjunction~\S#2#1#3}{, #2#1#3}{\termCrefPairConjunction~\S#2#1#3}
+
+\crefname{theorem}{\MakeLowercase{\termTheorem}}{\MakeLowercase{\termTheorems}}
+\crefname{proposition}{\MakeLowercase{\termProposition}}{\MakeLowercase{\termPropositions}}
+\crefname{lemma}{\MakeLowercase{\termLemma}}{\MakeLowercase{\termLemmas}}
+\crefname{conjecture}{\MakeLowercase{\termConjecture}}{\MakeLowercase{\termConjectures}}
+\crefname{corollary}{\MakeLowercase{\termCorollary}}{\MakeLowercase{\termCorollaries}}
+\crefname{problem}{\MakeLowercase{\termProblem}}{\MakeLowercase{\termProblems}}
+
+\crefname{definition}{\MakeLowercase{\termDefinition}}{\MakeLowercase{\termDefinitions}}
+\crefname{example}{\MakeLowercase{\termExample}}{\MakeLowercase{\termExamples}}
+
+\crefname{equation}{\MakeLowercase{\termEquation}}{\MakeLowercase{\termEquations}}
+\crefname{figure}{\MakeLowercase{\termFigure}}{\MakeLowercase{\termFigures}}
+\crefname{table}{\MakeLowercase{\termTable}}{\MakeLowercase{\termTables}}
+
+%% -- conjunctions -- %%
+
+\newcommand{\crefpairconjunction}{~\termCrefPairConjunction}
+\newcommand{\crefrangeconjunction}{~\termCrefRangeConjunction}
+\newcommand{\crefmiddleconjunction}{\termCrefMiddleConjunction}
+\newcommand{\creflastconjunction}{\termCrefLastConjunction}
+
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
+%%\\\\\\ END OF INPUT BLOCK \\\\\\%%
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%

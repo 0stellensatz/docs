@@ -15,4 +15,4 @@ if [ ! -f "${template}.tex" ]; then
 fi
 
 latexpand --keep-comments "${template}.tex" > "__latexpand/${template}.tex" && \
-echo -e "\n% COMPILED:\n%     $(date +%Y-%m-%dT%H:%M:%S%z)" >> "__latexpand/${template}.tex"
+echo -e "\n% TEMPLATE COMPILED:\n%     $(date +%Y-%m-%dT%H:%M:%S%z)" >> "__latexpand/${template}.tex"
