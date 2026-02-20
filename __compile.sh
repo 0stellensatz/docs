@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Usage:
+#   ./__compile.sh           # Compile all .tex files in the current directory
+#   ./__compile.sh file.tex  # Compile a specific .tex file
+
 compile() {
     local template="${1%.tex}"
 
