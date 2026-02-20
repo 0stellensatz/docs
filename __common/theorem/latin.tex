@@ -1,0 +1,106 @@
+%%//////////////////////////////////////%%
+%%////// BEGINNING OF INPUT BLOCK //////%%
+%%//////////////////////////////////////%%
+
+%% >>>> INPUT FROM:
+%% >>>>     __common/theorem/latin.tex
+%% >>>> VERSION:
+%% >>>>     2026-02-17
+
+% name
+% space above
+% space below
+% body font
+% indent amount
+% theorem head font
+% punctuation after theorem head
+% space after theorem head
+% theorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{latinplain}
+{16pt}
+{16pt}
+{\itshape}
+{}
+{\bfseries}
+{.}
+{.5em}
+{}
+
+\makeatletter
+\def\cleartheorem#1{%
+    \expandafter\let\csname#1\endcsname\relax
+    \expandafter\let\csname c@#1\endcsname\relax
+}
+\makeatother
+
+% an example of re-declaration of an existing theorem-like environment:
+%     \cleartheorem{problem}
+%     \theoremstyle{cjkplain}
+%     \newtheorem{problem}{\termProblem}[subsection]
+
+\theoremstyle{latinplain}
+
+\newtheorem{theorem}{\termTheorem}[section]
+\newtheorem*{theorem*}{\termTheorem}
+\newtheorem{proposition}[theorem]{\termProposition}
+\newtheorem*{proposition*}{\termProposition}
+\newtheorem{lemma}[theorem]{\termLemma}
+\newtheorem*{lemma*}{\termLemma}
+\newtheorem{conjecture}[theorem]{\termConjecture}
+\newtheorem*{conjecture*}{\termConjecture}
+\newtheorem{corollary}[theorem]{\termCorollary}
+\newtheorem*{corollary*}{\termCorollary}
+\newtheorem{problem}[theorem]{\termProblem}
+\newtheorem*{problem*}{\termProblem}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}[theorem]{\termDefinition}
+\newtheorem*{definition*}{\termDefinition}
+\newtheorem{example}[theorem]{\termExample}
+\newtheorem*{example*}{\termExample}
+
+\newtheorem{numbered}[theorem]{\ignorespaces}
+
+\theoremstyle{remark}
+
+\newtheorem*{note}{\termNote}
+\newtheorem*{remark}{\termRemark}
+\newtheorem*{solution}{\termSolution}
+
+\renewcommand\proofname{\termProof}
+
+%\newcommand{\envendmark}{---}
+\newcommand{\envendmark}{\hfill$\diamond$}
+
+\AtEndEnvironment{theorem}{\envendmark}
+\AtEndEnvironment{theorem*}{\envendmark}
+\AtEndEnvironment{proposition}{\envendmark}
+\AtEndEnvironment{proposition*}{\envendmark}
+\AtEndEnvironment{lemma}{\envendmark}
+\AtEndEnvironment{lemma*}{\envendmark}
+\AtEndEnvironment{conjecture}{\envendmark}
+\AtEndEnvironment{conjecture*}{\envendmark}
+\AtEndEnvironment{corollary}{\envendmark}
+\AtEndEnvironment{corollary*}{\envendmark}
+\AtEndEnvironment{problem}{\envendmark}
+\AtEndEnvironment{problem*}{\envendmark}
+
+\AtEndEnvironment{definition}{\envendmark}
+\AtEndEnvironment{definition*}{\envendmark}
+\AtEndEnvironment{example}{\envendmark}
+\AtEndEnvironment{example*}{\envendmark}
+
+\AtEndEnvironment{numbered}{\envendmark}
+
+\AtEndEnvironment{note}{\envendmark}
+\AtEndEnvironment{remark}{\envendmark}
+\AtEndEnvironment{solution}{\envendmark}
+
+\renewcommand\qedsymbol{$\square$}
+%\renewcommand\qedsymbol{$\blacksquare$}
+
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
+%%\\\\\\ END OF INPUT BLOCK \\\\\\%%
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%

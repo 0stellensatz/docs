@@ -1,0 +1,22 @@
+%%//////////////////////////////////////%%
+%%////// BEGINNING OF INPUT BLOCK //////%%
+%%//////////////////////////////////////%%
+
+%% >>>> INPUT FROM:
+%% >>>>     __common/commands/sorry.tex
+%% >>>> VERSION:
+%% >>>>     2026-02-18
+
+%% -- \sorry -- %%
+
+\newcommand{\sorry}[1][]{
+  \ifx\relax#1\relax
+    \red{[\textit{Sorry}.]}
+  \else
+    \red{[\textit{Sorry}: #1]}
+  \fi
+}
+
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
+%%\\\\\\ END OF INPUT BLOCK \\\\\\%%
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%

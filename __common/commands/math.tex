@@ -1,0 +1,329 @@
+%%//////////////////////////////////////%%
+%%////// BEGINNING OF INPUT BLOCK //////%%
+%%//////////////////////////////////////%%
+
+%% >>>> INPUT FROM:
+%% >>>>     __common/commands/math.tex
+%% >>>> VERSION:
+%% >>>>     2026-02-17
+
+%% -- MATH: superscripts and subscripts on the left side -- %%
+
+\newcommand{\presuperscript}[1]{{}^{#1}\!} % superscript on the left side
+\newcommand{\presubscript}[1]{{}_{#1}\!} % subscript on the left side
+
+%% -- MATH: linear groups -- %%
+
+\DeclareMathOperator{\GL}{\mathbf{GL}} % general linear group
+\DeclareMathOperator{\SL}{\mathbf{SL}} % special linear group
+\DeclareMathOperator{\PGL}{\mathbf{PGL}} % projective general linear group
+\DeclareMathOperator{\PSL}{\mathbf{PSL}} % projective special linear group
+\DeclareMathOperator{\Orth}{\mathbf{O}} % orthogonal group
+\DeclareMathOperator{\SOrth}{\mathbf{SO}} % special orthogonal group
+\DeclareMathOperator{\Uni}{\mathbf{U}} % unitary group
+\DeclareMathOperator{\SUni}{\mathbf{SU}} % special unitary group
+\DeclareMathOperator{\Sp}{\mathbf{Sp}} % symplectic group
+
+%% -- MATH: algebraic geometry (paired delimiters) -- %%
+
+\DeclarePairedDelimiter{\powerseries}{[\![}{]\!]} % power series brackets
+\DeclarePairedDelimiter{\bpowerseries}{[\![}{]\!]} % power series brackets
+\DeclarePairedDelimiter{\ppowerseries}{(\!(}{)\!)} % power series parentheses
+\DeclarePairedDelimiter{\Bpowerseries}{\{\!\{}{\}\!\}} % power series braces
+
+%% -- MATH: algebraic geometry (math operators) -- %%
+
+\DeclareMathOperator{\Div}{Div} % divisors
+\DeclareMathOperator{\Pic}{Pic} % Picard group
+\DeclareMathOperator{\SheafHom}{\mathscr{H}\text{\kern -3pt {\calligra\large om}}} % sheaf Hom
+\DeclareMathOperator{\Spec}{Spec} % spectrum of a ring
+\DeclareMathOperator{\Supp}{Supp} % support
+\DeclareMathOperator{\divisor}{div} % divisor of a function
+\DeclareMathOperator{\res}{res} % restriction
+\DeclareMathOperator{\trdeg}{tr.deg} % transcendence degree
+\ExplSyntaxOn
+\NewDocumentCommand{\ProjPoint}{m}{
+  ( \seq_set_from_clist:Nn \l_tmpa_seq { #1 }
+    \seq_use:Nn \l_tmpa_seq { {\,:\,} } )
+}
+\ExplSyntaxOff % point in projective space, e.g., \ProjPoint{X_0, X_1, X_2} gives (X_0 : X_1 : X_2)
+
+%% -- MATH: algebraic geometry (categories) -- %%
+
+\DeclareMathOperator{\CatOuv}{Ouv} % category of open sets
+\DeclareMathOperator{\CatPSh}{\mathbf{PSh}} % category of presheaves
+\DeclareMathOperator{\CatPresheaves}{\CatPSh} % category of presheaves
+\DeclareMathOperator{\CatSh}{\mathbf{Sh}} % category of sheaves
+\DeclareMathOperator{\CatSheaves}{\CatSh} % category of sheaves
+\DeclareMathOperator{\CatAffSch}{\mathbf{AffSch}} % category of affine schemes
+\DeclareMathOperator{\CatAffineSchemes}{\CatAffSch} % category of affine schemes
+\DeclareMathOperator{\CatSch}{\mathbf{Sch}} % category of schemes
+\DeclareMathOperator{\CatSchemes}{\CatSch} % category of schemes
+
+%% -- MATH: number theory (paired delimiters) -- %%
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} % ceiling function
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} % floor function
+
+%% -- MATH: number theory (math operators) -- %%
+
+\DeclareMathOperator{\Cl}{Cl} % class group
+\DeclareMathOperator{\Gal}{Gal} % Galois group
+\DeclareMathOperator{\Norm}{N} % norm
+\DeclareMathOperator{\N}{\Norm} % norm
+%\DeclareMathOperator{\Trace}{Tr} % trace
+%\DeclareMathOperator{\Tr}{\Trace} % trace
+\DeclareMathOperator{\Art}{Art} % Artin map
+\DeclareMathOperator{\Ver}{Ver} % Verschiebung (transfer)
+\DeclareMathOperator{\Frob}{Frob} % Frobenius
+\DeclareMathOperator{\ord}{ord} % order (valuation)
+\DeclareMathOperator{\Spm}{Spm} % maximal spectrum
+\DeclareMathOperator{\Spa}{Spa} % adic spectrum
+\DeclareMathOperator{\Spf}{Spf} % formal spectrum
+
+%% -- MATH: number theory (commands) -- %%
+
+\renewcommand{\mod}{\,\,\,\mathrm{mod}\,} % mod (in congruences)
+%\newcommand{\nr}{\mathrm{nr}} % unramified
+\newcommand{\un}{\mathrm{un}} % unramified
+\newcommand{\cyc}{\mathrm{cycl}} % cyclotomic
+\newcommand{\cycl}{\cyc} % cyclotomic
+\newcommand{\tame}{\mathrm{tame}} % tamely ramified
+\newcommand{\alg}{\mathrm{alg}} % algebraic
+\newcommand{\sep}{\mathrm{sep}} % separable
+\newcommand{\MLF}{\mathrm{MLF}} % mixed-characteristic local field
+\newcommand{\LT}{\mathrm{LT}} % Lubin-Tate
+\newcommand{\HT}{\mathrm{HT}} % Hodge-Tate
+\newcommand{\Primes}{\mathfrak{Primes}} % set of all primes
+
+%% -- MATH: number theory (categories) -- %%
+
+\DeclareMathOperator{\CatAffAlg}{\mathbf{AffAlg}} % category of affine algebras
+\DeclareMathOperator{\CatAffineAlgebras}{\CatAffAlg} % category of affine algebras
+\DeclareMathOperator{\CatAffSp}{\mathbf{AffSp}} % category of affine spaces
+\DeclareMathOperator{\CatAffineSpaces}{\CatAffSp} % category of affine spaces
+\DeclareMathOperator{\CatRig}{\mathbf{Rig}} % category of rigid spaces
+\DeclareMathOperator{\CatRigidSpaces}{\CatRig} % category of rigid spaces
+\DeclareMathOperator{\CatAffFSch}{\mathbf{AffFSch}} % category of affine formal schemes
+\DeclareMathOperator{\CatAffineFormalSchemes}{\CatAffFSch} % category of affine formal schemes
+\DeclareMathOperator{\CatFSch}{\mathbf{FSch}} % category of formal schemes
+\DeclareMathOperator{\CatFormalSchemes}{\CatFSch} % category of formal schemes
+
+%% -- MATH: category theory (mathscr) -- %%
+
+\newcommand{\CatA}{\mathscr{A}}
+\newcommand{\CatB}{\mathscr{B}}
+\newcommand{\CatC}{\mathscr{C}}
+\newcommand{\CatD}{\mathscr{D}}
+\newcommand{\CatE}{\mathscr{E}}
+\newcommand{\CatF}{\mathscr{F}}
+\newcommand{\CatG}{\mathscr{G}}
+\newcommand{\CatH}{\mathscr{H}}
+\newcommand{\CatI}{\mathscr{I}}
+\newcommand{\CatJ}{\mathscr{J}}
+\newcommand{\CatK}{\mathscr{K}}
+\newcommand{\CatL}{\mathscr{L}}
+\newcommand{\CatM}{\mathscr{M}}
+\newcommand{\CatN}{\mathscr{N}}
+\newcommand{\CatO}{\mathscr{O}}
+\newcommand{\CatP}{\mathscr{P}}
+\newcommand{\CatQ}{\mathscr{Q}}
+\newcommand{\CatR}{\mathscr{R}}
+\newcommand{\CatS}{\mathscr{S}}
+\newcommand{\CatT}{\mathscr{T}}
+\newcommand{\CatU}{\mathscr{U}}
+\newcommand{\CatV}{\mathscr{V}}
+\newcommand{\CatW}{\mathscr{W}}
+\newcommand{\CatX}{\mathscr{X}}
+\newcommand{\CatY}{\mathscr{Y}}
+\newcommand{\CatZ}{\mathscr{Z}}
+
+%% -- MATH: category theory (math operators) -- %%
+
+\DeclareMathOperator{\Ker}{Ker} % kernel
+\DeclareMathOperator{\Coker}{Coker} % cokernel
+\DeclareMathOperator{\Obj}{Obj} % objects
+\DeclareMathOperator{\Mor}{Mor} % morphisms
+\DeclareMathOperator{\Hom}{Hom} % homomorphisms
+\DeclareMathOperator{\End}{End} % endomorphisms
+\DeclareMathOperator{\Aut}{Aut} % automorphisms
+\DeclareMathOperator{\Isom}{Isom} % isomorphisms
+\DeclareMathOperator{\id}{id} % identity
+\DeclareMathOperator{\pr}{pr} % projection
+
+%% -- MATH: category theory (commands) -- %%
+
+\newcommand{\dashalg}{\textrm{-}\mathrm{alg}} % -algebras
+\newcommand{\opp}{\mathrm{opp}} % opposite
+
+%% -- MATH: category theory (categories) -- %%
+
+\DeclareMathOperator{\CatCat}{\mathbf{Cat}} % category of small categories
+\DeclareMathOperator{\CatCAT}{\mathbf{CAT}} % category of (possibly large) categories
+\DeclareMathOperator{\CatSets}{\mathbf{Sets}} % category of sets
+\DeclareMathOperator{\CatTop}{\mathbf{Top}} % category of topological spaces
+\DeclareMathOperator{\CatTopologicalSpaces}{\CatTop} % category of topological spaces
+\DeclareMathOperator{\CatGroups}{\mathbf{Groups}} % category of groups
+\DeclareMathOperator{\CatAb}{\mathbf{Ab}} % category of abelian groups
+\DeclareMathOperator{\CatAbelian}{\CatAb} % category of abelian groups
+\DeclareMathOperator{\CatRings}{\mathbf{Rings}} % category of rings
+\DeclareMathOperator{\CatAlg}{\mathbf{Alg}} % category of algebras
+\DeclareMathOperator{\CatAlgebras}{\CatAlg} % category of algebras
+\DeclareMathOperator{\CatMod}{\mathbf{Mod}} % category of modules
+\DeclareMathOperator{\CatModules}{\CatMod} % category of modules
+\DeclareMathOperator{\CatVect}{\mathbf{Vect}} % category of vector spaces
+\DeclareMathOperator{\CatVectorSpaces}{\CatVect} % category of vector spaces
+\DeclareMathOperator{\CatVectFin}{\mathrm{fin.\!dim.\!}\CatVect} % category of finite-dimensional vector spaces
+\DeclareMathOperator{\CatFun}{\mathbf{Fun}} % category of functors
+\DeclareMathOperator{\CatFunctors}{\CatFun} % category of functors
+
+%% -- MATH: group theory (math operators) -- %%
+
+\DeclareMathOperator{\Inn}{Inn} % inner automorphisms
+\DeclareMathOperator{\Out}{Out} % outer automorphisms
+\DeclareMathOperator{\Stab}{Stab} % stabilizer
+
+%% -- MATH: group theory (commands) -- %%
+
+\newcommand{\ab}{\mathrm{ab}} % abelian
+\newcommand{\mab}{\mathrm{mab}} % metabelian
+\newcommand{\solv}{\mathrm{solv}} % solvable
+\newcommand{\nilp}{\mathrm{nilp}} % nilpotent
+\newcommand{\tor}{\mathrm{tor}} % torsion
+\newcommand{\filt}{\mathrm{filt}} % filtered
+\newcommand{\pro}{\mathrm{pro}} % pro
+\newcommand{\primeto}{\mathrm{prime}\textrm{-}\mathrm{to}} % prime-to
+\newcommand{\prof}{\mathrm{prof}} % profinite
+
+%% -- MATH: group theory (dash ...) -- %%
+
+\newcommand{\dashfilt}{\textrm{-}\filt} % -filtered
+\newcommand{\dashsolv}{\textrm{-}\solv} % -solvable
+\newcommand{\dashnilp}{\textrm{-}\nilp} % -nilpotent
+
+%% -- MATH: group theory (... dash) -- %%
+
+\newcommand{\prodash}{\pro\textrm{-}} % pro-
+\newcommand{\primetodash}{\primeto\textrm{-}} % prime-to-
+
+%% -- MATH: set theory (commands) -- %%
+
+\newcommand{\Set}[2]{\left\{ #1 \; \middle| \; #2 \right\}}
+
+%% -- MATH: set theory (mathbb) -- %%
+
+%\newcommand{\affine}{\mathbb{A}}
+%\newcommand{\sphere}{\mathbb{S}}
+%\newcommand{\SetA}{\mathbb{A}}
+%\newcommand{\SetB}{\mathbb{B}}
+%\newcommand{\SetC}{\mathbb{C}}
+%\newcommand{\SetD}{\mathbb{D}}
+%\newcommand{\SetE}{\mathbb{E}}
+%\newcommand{\SetF}{\mathbb{F}}
+%\newcommand{\SetG}{\mathbb{G}}
+%\newcommand{\SetH}{\mathbb{H}}
+%\newcommand{\SetI}{\mathbb{I}}
+%\newcommand{\SetJ}{\mathbb{J}}
+%\newcommand{\SetK}{\mathbb{K}}
+%\newcommand{\SetL}{\mathbb{L}}
+%\newcommand{\SetM}{\mathbb{M}}
+%\newcommand{\SetN}{\mathbb{N}}
+%\newcommand{\SetO}{\mathbb{O}}
+%\newcommand{\SetP}{\mathbb{P}}
+%\newcommand{\SetQ}{\mathbb{Q}}
+%\newcommand{\SetR}{\mathbb{R}}
+%\newcommand{\SetS}{\mathbb{S}}
+%\newcommand{\SetT}{\mathbb{T}}
+%\newcommand{\SetU}{\mathbb{U}}
+%\newcommand{\SetV}{\mathbb{V}}
+%\newcommand{\SetW}{\mathbb{W}}
+%\newcommand{\SetX}{\mathbb{X}}
+%\newcommand{\SetY}{\mathbb{Y}}
+%\newcommand{\SetZ}{\mathbb{Z}}
+%%\newcommand{\AA}{\mathbb{A}}
+%\newcommand{\BB}{\mathbb{B}}
+%\newcommand{\CC}{\mathbb{C}}
+%\newcommand{\DD}{\mathbb{D}}
+%\newcommand{\EE}{\mathbb{E}}
+%\newcommand{\FF}{\mathbb{F}}
+%\newcommand{\GG}{\mathbb{G}}
+%\newcommand{\HH}{\mathbb{H}}
+%\newcommand{\II}{\mathbb{I}}
+%\newcommand{\JJ}{\mathbb{J}}
+%\newcommand{\KK}{\mathbb{K}}
+%\newcommand{\LL}{\mathbb{L}}
+%\newcommand{\MM}{\mathbb{M}}
+%\newcommand{\NN}{\mathbb{N}}
+%\newcommand{\OO}{\mathbb{O}}
+%\newcommand{\PP}{\mathbb{P}}
+%\newcommand{\QQ}{\mathbb{Q}}
+%\newcommand{\RR}{\mathbb{R}}
+%%\newcommand{\SS}{\mathbb{S}}
+%\newcommand{\TT}{\mathbb{T}}
+%\newcommand{\UU}{\mathbb{U}}
+%\newcommand{\VV}{\mathbb{V}}
+%\newcommand{\WW}{\mathbb{W}}
+%\newcommand{\XX}{\mathbb{X}}
+%\newcommand{\YY}{\mathbb{Y}}
+%\newcommand{\ZZ}{\mathbb{Z}}
+
+%% -- MATH: set theory (mathbf) -- %%
+
+\newcommand{\affine}{\mathbf{A}}
+\newcommand{\sphere}{\mathbf{S}}
+\newcommand{\SetA}{\mathbf{A}}
+\newcommand{\SetB}{\mathbf{B}}
+\newcommand{\SetC}{\mathbf{C}}
+\newcommand{\SetD}{\mathbf{D}}
+\newcommand{\SetE}{\mathbf{E}}
+\newcommand{\SetF}{\mathbf{F}}
+\newcommand{\SetG}{\mathbf{G}}
+\newcommand{\SetH}{\mathbf{H}}
+\newcommand{\SetI}{\mathbf{I}}
+\newcommand{\SetJ}{\mathbf{J}}
+\newcommand{\SetK}{\mathbf{K}}
+\newcommand{\SetL}{\mathbf{L}}
+\newcommand{\SetM}{\mathbf{M}}
+\newcommand{\SetN}{\mathbf{N}}
+\newcommand{\SetO}{\mathbf{O}}
+\newcommand{\SetP}{\mathbf{P}}
+\newcommand{\SetQ}{\mathbf{Q}}
+\newcommand{\SetR}{\mathbf{R}}
+\newcommand{\SetS}{\mathbf{S}}
+\newcommand{\SetT}{\mathbf{T}}
+\newcommand{\SetU}{\mathbf{U}}
+\newcommand{\SetV}{\mathbf{V}}
+\newcommand{\SetW}{\mathbf{W}}
+\newcommand{\SetX}{\mathbf{X}}
+\newcommand{\SetY}{\mathbf{Y}}
+\newcommand{\SetZ}{\mathbf{Z}}
+%\newcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\DD}{\mathbf{D}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\JJ}{\mathbf{J}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+%\newcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\newcommand{\YY}{\mathbf{Y}}
+\newcommand{\ZZ}{\mathbf{Z}}
+
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
+%%\\\\\\ END OF INPUT BLOCK \\\\\\%%
+%%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%%
