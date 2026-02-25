@@ -8,10 +8,17 @@
 # are automatically followed by dvipdfmx.
 #
 # Usage:
-#     ./__build.sh              # build all *.tex in this directory
-#     ./__build.sh foo.tex      # build a single template
+#     ./__batch_build.sh                     # build all *.tex in this directory
+#     ./__batch_build.sh foo.tex             # build a single template
+#     ./__batch_build.sh --biber             # build all, with biber bibliography pass
+#     ./__batch_build.sh --biber foo.tex     # build single file with biber
+#
+# --biber / --biblatex:
+#     Runs: engine → biber → engine → engine (→ dvipdfmx for DVI engines)
 
 DVI_ENGINES="uplatex platex uptex platex-dev"
+
+USE_BIBER=0
 
 is_dvi_engine() {
     local engine="$1"
@@ -40,11 +47,21 @@ build() {
         return 1
     fi
 
-    echo "==> Building '${template}.tex' with $engine ..."
-
-    # Run engine twice for cross-references, TOC, etc.
-    "$engine" -interaction=nonstopmode -halt-on-error "${template}.tex" || return 1
-    "$engine" -interaction=nonstopmode -halt-on-error "${template}.tex" || return 1
+    if [ "$USE_BIBER" -eq 1 ]; then
+        echo "==> Building '${template}.tex' with $engine + biber ..."
+        # First pass: generate .bcf
+        "$engine" -interaction=nonstopmode -halt-on-error "${template}.tex" || return 1
+        # Biber pass: process bibliography
+        biber "${template}" || return 1
+        # Two more engine passes to resolve all references
+        "$engine" -interaction=nonstopmode -halt-on-error "${template}.tex" || return 1
+        "$engine" -interaction=nonstopmode -halt-on-error "${template}.tex" || return 1
+    else
+        echo "==> Building '${template}.tex' with $engine ..."
+        # Run engine twice for cross-references, TOC, etc.
+        "$engine" -interaction=nonstopmode -halt-on-error "${template}.tex" || return 1
+        "$engine" -interaction=nonstopmode -halt-on-error "${template}.tex" || return 1
+    fi
 
     # DVI engines need an extra dvipdfmx pass
     if is_dvi_engine "$engine"; then
@@ -54,7 +71,23 @@ build() {
     echo "==> Done: ${template}.pdf"
 }
 
-if [ -z "$1" ]; then
+# Parse flags
+for arg in "$@"; do
+    case "$arg" in
+        --biber|--biblatex) USE_BIBER=1 ;;
+    esac
+done
+
+# Collect non-flag arguments
+args=()
+for arg in "$@"; do
+    case "$arg" in
+        --*) ;;
+        *) args+=("$arg") ;;
+    esac
+done
+
+if [ ${#args[@]} -eq 0 ]; then
     failed=()
     for tex_file in *.tex; do
         build "$tex_file" || failed+=("$tex_file")
@@ -68,5 +101,5 @@ if [ -z "$1" ]; then
         exit 1
     fi
 else
-    build "$1"
+    build "${args[0]}"
 fi
